@@ -7,8 +7,6 @@ Make the songs folder in this form
 
 Remove achievements shit
 
-Go back to the menu from 0.7.3 just because of simplicity
-
 Reorganize the images and stuff
 
 Remove unused shit
