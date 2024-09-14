@@ -5,8 +5,7 @@ Make the songs folder in this form
 ........📄bopeebo-hard.json
 ........🎵Inst.ogg
 
-Remove achievements shit
-
 Reorganize the images and stuff
 
-Remove unused shit
+Rework TitleState
+
