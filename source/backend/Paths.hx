@@ -34,7 +34,7 @@ class Paths
 			dumpExclusions.push(key);
 	}
 
-	public static var dumpExclusions:Array<String> = ['assets/shared/music/freakyMenu.$SOUND_EXT'];
+	public static var dumpExclusions:Array<String> = ['assets/music/freakyMenu.$SOUND_EXT'];
 	// haya I love you for the base cache dump I took to the max
 	public static function clearUnusedMemory()
 	{
@@ -106,22 +106,22 @@ class Paths
 		#end
 
 		if (parentfolder != null)
-			return getFolderPath(file, parentfolder);
+			return getFolderPath(file);
 
 		if (currentLevel != null && currentLevel != 'shared')
 		{
-			var levelPath = getFolderPath(file, currentLevel);
+			var levelPath = getFolderPath(file);
 			if (OpenFlAssets.exists(levelPath, type))
 				return levelPath;
 		}
 		return getSharedPath(file);
 	}
 
-	inline static public function getFolderPath(file:String, folder = "shared")
-		return 'assets/$folder/$file';
+	inline static public function getFolderPath(file:String)
+		return 'assets/$file';
 
 	inline public static function getSharedPath(file:String = '')
-		return 'assets/shared/$file';
+		return 'assets/$file';
 
 	inline static public function txt(key:String, ?folder:String)
 		return getPath('data/$key.txt', TEXT, folder, true);
@@ -133,10 +133,10 @@ class Paths
 		return getPath('data/$key.json', TEXT, folder, true);
 
 	inline static public function shaderFragment(key:String, ?folder:String)
-		return getPath('shaders/$key.frag', TEXT, folder, true);
+		return getPath('data/shaders/$key.frag', TEXT, folder, true);
 
 	inline static public function shaderVertex(key:String, ?folder:String)
-		return getPath('shaders/$key.vert', TEXT, folder, true);
+		return getPath('data/shaders/$key.vert', TEXT, folder, true);
 
 	inline static public function lua(key:String, ?folder:String)
 		return getPath('$key.lua', TEXT, folder, true);
@@ -149,6 +149,9 @@ class Paths
 		#end
 		return 'assets/videos/$key.$VIDEO_EXT';
 	}
+
+	inline static public function embeddedImage(file:String)
+		return 'assets/embed/images/$file.png';
 
 	inline static public function sound(key:String, ?modsAllowed:Bool = true):Sound
 		return returnSound('sounds/$key', modsAllowed);

@@ -1,0 +1,31 @@
+Make the assets folder in this form
+
+📂 data
+....📂 characters
+....📂 shaders
+....📂 scripts
+....📂 stages
+....📂 weeks
+....📄 introText.txt
+
+📂 embed
+....just leave this as is
+
+📂 images
+....📂 characters
+....📂 menu
+....📂 other things, this folder isnt really important
+
+📂 music
+.... yeah
+
+📂 sounds
+.... suck my dick
+
+📂 songs
+....📂 bopeebo
+........📄bopeebo-hard.json
+........🎵Inst.ogg
+
+also remove week assets and translation
+this is a fork im only gonna be using for my mods from now on so i wont be needing these features
