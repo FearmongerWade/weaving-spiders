@@ -33,6 +33,8 @@ import objects.HealthIcon;
 import objects.Note;
 import objects.StrumNote;
 
+import openfl.Assets as OpenFlAssets;
+
 using DateTools;
 
 typedef UndoStruct = {
