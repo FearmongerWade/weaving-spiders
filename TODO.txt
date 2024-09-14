@@ -1,31 +1,14 @@
-Make the assets folder in this form
-
-📂 data
-....📂 characters
-....📂 shaders
-....📂 scripts
-....📂 stages
-....📂 weeks
-....📄 introText.txt
-
-📂 embed
-....just leave this as is
-
-📂 images
-....📂 characters
-....📂 menu
-....📂 other things, this folder isnt really important
-
-📂 music
-.... yeah
-
-📂 sounds
-.... suck my dick
+Make the songs folder in this form
 
 📂 songs
 ....📂 bopeebo
 ........📄bopeebo-hard.json
 ........🎵Inst.ogg
 
-also remove week assets and translation
-this is a fork im only gonna be using for my mods from now on so i wont be needing these features
+Remove achievements shit
+
+Go back to the menu from 0.7.3 just because of simplicity
+
+Reorganize the images and stuff
+
+Remove unused shit
