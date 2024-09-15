@@ -50,7 +50,7 @@ class DialogueEditorState extends MusicBeatState implements PsychUIEventHandler.
 
 		box = new FlxSprite(70, 370);
 		box.antialiasing = ClientPrefs.data.antialiasing;
-		box.frames = Paths.getSparrowAtlas('speech_bubble');
+		box.frames = Paths.getSparrowAtlas('dialogue/speech_bubble');
 		box.scrollFactor.set();
 		box.animation.addByPrefix('normal', 'speech bubble normal', 24);
 		box.animation.addByPrefix('angry', 'AHH speech bubble', 24);
@@ -177,7 +177,7 @@ class DialogueEditorState extends MusicBeatState implements PsychUIEventHandler.
 	}
 
 	function reloadCharacter() {
-		character.frames = Paths.getSparrowAtlas('dialogue/' + character.jsonFile.image);
+		character.frames = Paths.getSparrowAtlas('dialogue/images/' + character.jsonFile.image);
 		character.jsonFile = character.jsonFile;
 		character.reloadAnimations();
 		character.setGraphicSize(Std.int(character.width * DialogueCharacter.DEFAULT_SCALE * character.jsonFile.scale));
