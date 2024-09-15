@@ -2472,9 +2472,11 @@ class PlayState extends MusicBeatState
 		var uiPostfix:String = '';
 		if (stageUI != "normal")
 		{
-			uiPrefix = '${stageUI}UI/';
+			uiPrefix = 'ui/${stageUI}/';
 			if (PlayState.isPixelStage) uiPostfix = '-pixel';
 		}
+		else
+			uiPrefix = 'ui/base/';
 
 		for (rating in ratingsData)
 			Paths.image(uiPrefix + rating.image + uiPostfix);
