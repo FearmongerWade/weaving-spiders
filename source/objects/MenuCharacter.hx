@@ -46,7 +46,7 @@ class MenuCharacter extends FlxSprite
 				visible = false;
 				dontPlayAnim = true;
 			default:
-				var characterPath:String = 'images/menucharacters/' + character + '.json';
+				var characterPath:String = 'images/menus/storymenu/menucharacters/' + character + '.json';
 
 				var path:String = Paths.getPath(characterPath, TEXT);
 				#if MODS_ALLOWED
@@ -55,7 +55,7 @@ class MenuCharacter extends FlxSprite
 				if (!Assets.exists(path))
 				#end
 				{
-					path = Paths.getSharedPath('characters/' + DEFAULT_CHARACTER + '.json'); //If a character couldn't be found, change him to BF just to prevent a crash
+					path = Paths.getSharedPath('data/characters/' + DEFAULT_CHARACTER + '.json'); //If a character couldn't be found, change him to BF just to prevent a crash
 					color = FlxColor.BLACK;
 					alpha = 0.6;
 				}
@@ -74,7 +74,7 @@ class MenuCharacter extends FlxSprite
 					trace('Error loading menu character file of "$character": $e');
 				}
 
-				frames = Paths.getSparrowAtlas('menucharacters/' + charFile.image);
+				frames = Paths.getSparrowAtlas('menus/storymenu/menucharacters/' + charFile.image);
 				animation.addByPrefix('idle', charFile.idle_anim, 24);
 
 				var confirmAnim:String = charFile.confirm_anim;
