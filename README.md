@@ -1,4 +1,4 @@
-<h2 align="center">![](https://pbs.twimg.com/media/GWuDHGoW8AA84Ng?format=jpg&name=large) </h2>
+![](https://pbs.twimg.com/media/GWuDHGoW8AA84Ng?format=jpg&name=large)
 <h1 align="center">Weaving Spiders</h1>
 
 _____________________________________
