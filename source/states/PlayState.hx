@@ -462,7 +462,7 @@ class PlayState extends MusicBeatState
 		if(ClientPrefs.data.downScroll) timeTxt.y = FlxG.height - 44;
 		if(ClientPrefs.data.timeBarType == 'Song Name') timeTxt.text = SONG.song;
 
-		timeBar = new Bar(0, timeTxt.y + (timeTxt.height / 4), 'timeBar', function() return songPercent, 0, 1);
+		timeBar = new Bar(0, timeTxt.y + (timeTxt.height / 4), 'ui/timeBar', function() return songPercent, 0, 1);
 		timeBar.scrollFactor.set();
 		timeBar.screenCenter(X);
 		timeBar.alpha = 0;
@@ -500,7 +500,7 @@ class PlayState extends MusicBeatState
 		FlxG.worldBounds.set(0, 0, FlxG.width, FlxG.height);
 		moveCameraSection();
 
-		healthBar = new Bar(0, FlxG.height * (!ClientPrefs.data.downScroll ? 0.89 : 0.11), 'healthBar', function() return health, 0, 2);
+		healthBar = new Bar(0, FlxG.height * (!ClientPrefs.data.downScroll ? 0.89 : 0.11), 'ui/healthBar', function() return health, 0, 2);
 		healthBar.screenCenter(X);
 		healthBar.leftToRight = false;
 		healthBar.scrollFactor.set();
@@ -908,9 +908,9 @@ class PlayState extends MusicBeatState
 	{
 		var introAssets:Map<String, Array<String>> = new Map<String, Array<String>>();
 		var introImagesArray:Array<String> = switch(stageUI) {
-			case "pixel": ['${stageUI}UI/ready-pixel', '${stageUI}UI/set-pixel', '${stageUI}UI/date-pixel'];
-			case "normal": ["ready", "set" ,"go"];
-			default: ['${stageUI}UI/ready', '${stageUI}UI/set', '${stageUI}UI/go'];
+			case "pixel": ['ui/${stageUI}/ready-pixel', 'ui/${stageUI}/set-pixel', 'ui/${stageUI}/date-pixel'];
+			case "normal": ["ui/base/ready", "ui/base/set" ,"ui/base/go"];
+			default: ['${stageUI}/ready', '${stageUI}/set', '${stageUI}/go'];
 		}
 		introAssets.set(stageUI, introImagesArray);
 		var introAlts:Array<String> = introAssets.get(stageUI);
@@ -972,8 +972,8 @@ class PlayState extends MusicBeatState
 
 				var introAssets:Map<String, Array<String>> = new Map<String, Array<String>>();
 				var introImagesArray:Array<String> = switch(stageUI) {
-					case "pixel": ['${stageUI}UI/ready-pixel', '${stageUI}UI/set-pixel', '${stageUI}UI/date-pixel'];
-					case "normal": ["ready", "set" ,"go"];
+					case "pixel": ['ui/${stageUI}/ready-pixel', 'ui/${stageUI}/set-pixel', 'ui/${stageUI}/date-pixel'];
+					case "normal": ["ui/base/ready", "ui/base/set" ,"ui/base/go"];
 					default: ['${stageUI}UI/ready', '${stageUI}UI/set', '${stageUI}UI/go'];
 				}
 				introAssets.set(stageUI, introImagesArray);
@@ -2530,10 +2530,12 @@ class PlayState extends MusicBeatState
 
 		if (stageUI != "normal")
 		{
-			uiPrefix = '${stageUI}UI/';
+			uiPrefix = 'ui/${stageUI}/';
 			if (PlayState.isPixelStage) uiPostfix = '-pixel';
 			antialias = !isPixelStage;
 		}
+		else 
+			uiPrefix = 'ui/base/';
 
 		rating.loadGraphic(Paths.image(uiPrefix + daRating.image + uiPostfix));
 		rating.screenCenter();

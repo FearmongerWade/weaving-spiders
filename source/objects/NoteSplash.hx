@@ -37,7 +37,7 @@ class NoteSplash extends FlxSprite
 	public var skin:String;
 	public var config(default, set):NoteSplashConfig;
 
-	public static var DEFAULT_SKIN:String = "noteSplashes/noteSplashes";
+	public static var DEFAULT_SKIN:String = "ui/noteSplashes/noteSplashes";
 	public static var configs:Map<String, NoteSplashConfig> = new Map();
 
 	public var babyArrow:StrumNote;
