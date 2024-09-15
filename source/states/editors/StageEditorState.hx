@@ -1119,7 +1119,7 @@ class StageEditorState extends MusicBeatState implements PsychUIEventHandler.Psy
 
 		stageDropDown = new PsychUIDropDownMenu(10, 30, [''], function(sel:Int, selected:String)
 		{
-			var characterPath:String = 'stages/$selected.json';
+			var characterPath:String = 'data/stages/$selected.json';
 			var path:String = Paths.getPath(characterPath, TEXT, null, true);
 			#if MODS_ALLOWED
 			if (FileSystem.exists(path))
@@ -1276,7 +1276,7 @@ class StageEditorState extends MusicBeatState implements PsychUIEventHandler.Psy
 	function reloadStageDropDown()
 	{
 		var stageList:Array<String> = [];
-		var foldersToCheck:Array<String> = Mods.directoriesWithFile(Paths.getSharedPath(), 'stages/');
+		var foldersToCheck:Array<String> = Mods.directoriesWithFile(Paths.getSharedPath(), 'data/stages/');
 		for (folder in foldersToCheck)
 			for (file in FileSystem.readDirectory(folder))
 				if(file.toLowerCase().endsWith('.json'))
