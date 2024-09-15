@@ -130,7 +130,7 @@ class Paths
 		return getPath('data/$key.xml', TEXT, folder, true);
 
 	inline static public function json(key:String, ?folder:String)
-		return getPath('data/$key.json', TEXT, folder, true);
+		return getPath('songs/$key.json', TEXT, folder, true);
 
 	inline static public function shaderFragment(key:String, ?folder:String)
 		return getPath('data/shaders/$key.frag', TEXT, folder, true);
@@ -160,14 +160,14 @@ class Paths
 		return returnSound('music/$key', modsAllowed);
 
 	inline static public function inst(song:String, ?modsAllowed:Bool = true):Sound
-		return returnSound('${formatToSongPath(song)}/Inst', 'songs', modsAllowed);
+		return returnSound('songs/${formatToSongPath(song)}/Inst', modsAllowed);
 
 	inline static public function voices(song:String, postfix:String = null, ?modsAllowed:Bool = true):Sound
 	{
-		var songKey:String = '${formatToSongPath(song)}/Voices';
+		var songKey:String = 'songs/${formatToSongPath(song)}/Voices';
 		if(postfix != null) songKey += '-' + postfix;
 		//trace('songKey test: $songKey');
-		return returnSound(songKey, 'songs', modsAllowed, false);
+		return returnSound(songKey, modsAllowed, false);
 	}
 
 	inline static public function soundRandom(key:String, min:Int, max:Int, ?modsAllowed:Bool = true)
