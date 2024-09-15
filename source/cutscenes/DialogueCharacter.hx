@@ -43,7 +43,7 @@ class DialogueCharacter extends FlxSprite
 		this.curCharacter = character;
 
 		reloadCharacterJson(character);
-		frames = Paths.getSparrowAtlas('dialogue/characters' + jsonFile.image);
+		frames = Paths.getSparrowAtlas('dialogue/characters/' + jsonFile.image);
 		reloadAnimations();
 
 		antialiasing = ClientPrefs.data.antialiasing;
