@@ -22,6 +22,7 @@ import objects.Note;
 import objects.NoteSplash;
 import objects.Character;
 
+import states.InitState;
 import states.MainMenuState;
 import states.StoryMenuState;
 import states.FreeplayState;
@@ -83,7 +84,7 @@ class FunkinLua {
 		set('Function_Continue', LuaUtils.Function_Continue);
 		set('luaDebugMode', false);
 		set('luaDeprecatedWarnings', true);
-		set('version', MainMenuState.psychEngineVersion.trim());
+		set('version', InitState.psychEngineVersion.trim());
 		set('modFolder', this.modFolder);
 
 		// Song/Week shit
