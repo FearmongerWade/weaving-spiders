@@ -435,7 +435,7 @@ class BaseOptionsMenu extends MusicBeatSubstate
 			switch(alpha.text)
 			{
 				case '[', ']': //Square and Triangle respectively
-					letter.image = 'alphabet_playstation';
+					letter.image = 'menus/options/alphabet_playstation';
 					letter.updateHitbox();
 					
 					letter.offset.x += 4;

@@ -592,7 +592,7 @@ class PlayState extends MusicBeatState
 		//PRECACHING THINGS THAT GET USED FREQUENTLY TO AVOID LAGSPIKES
 		if(ClientPrefs.data.hitsoundVolume > 0) Paths.sound('hitsound');
 		if(!ClientPrefs.data.ghostTapping) for (i in 1...4) Paths.sound('missnote$i');
-		Paths.image('alphabet');
+		Paths.image('menus/options/alphabet');
 
 		if (PauseSubState.songName != null)
 			Paths.music(PauseSubState.songName);
